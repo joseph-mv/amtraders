@@ -1,8 +1,44 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* Primary Background */
+  --background: #5c0a29;
+
+  /* Primary Foreground */
   --foreground: #171717;
+
+  /* Typography */
+  --text-primary: #f2e8e8; /* Primary text color (light off-white) */
+  --text-secondary: #d8a5a5; /* Secondary text color (muted pinkish beige) */
+  --heading-text: #ffffff; /* Headings (white) */
+
+  /* Buttons */
+  --btn-primary-bg: #ffd369; /* Primary button background (warm yellow gold) */
+  --btn-primary-text: #5c0a29; /* Primary button text color */
+  --btn-primary-hover-bg: #f7c341; /* Primary button hover background */
+  --btn-secondary-border: 1px solid #ffd369; /* Secondary button border */
+  --btn-secondary-text: #ffd369; /* Secondary button text */
+  --btn-secondary-hover-bg: rgba(
+    255,
+    211,
+    105,
+    0.1
+  ); /* Secondary button hover background */
+
+  /* UI Elements */
+  --link-color: #ffd369; /* Links color */
+  --link-hover-color: #ffb627; /* Active/hover link color */
+  --divider-color: #94405c; /* Divider color */
+
+  /* Sections / Cards */
+  --card-bg: #73163e; /* Card background */
+  --footer-bg: #3b061a; /* Footer background */
+  --footer-text: #cccccc; /* Footer text */
+
+  /* Optional Accent Colors */
+  --accent-blue: #38b6ff; /* Cool blue for tags, highlights */
+  --accent-green: #7fffd4; /* Mint green for success messages */
+  --accent-rose: #ff6f91; /* Warm rose for alerts or decorative accents */
 }
 
 @theme inline {
@@ -10,17 +46,59 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Typography */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-heading-text: var(--heading-text);
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-text: var(--btn-primary-text);
+  --color-btn-primary-hover-bg: var(--btn-primary-hover-bg);
+  --color-btn-secondary-border: var(--btn-secondary-border);
+  --color-btn-secondary-text: var(--btn-secondary-text);
+  --color-btn-secondary-hover-bg: var(--btn-secondary-hover-bg);
+
+  /* UI Elements */
+  --color-link: var(--link-color);
+  --color-link-hover: var(--link-hover-color);
+  --color-divider: var(--divider-color);
+
+  /* Sections / Cards */
+  --color-card-bg: var(--card-bg);
+  --color-footer-bg: var(--footer-bg);
+  --color-footer-text: var(--footer-text);
+
+  /* Optional Accent Colors */
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-green: var(--accent-green);
+  --color-accent-rose: var(--accent-rose);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.fixed-body {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+html {
+  font-size: 16px; /* Base font size */
+  scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
 }
