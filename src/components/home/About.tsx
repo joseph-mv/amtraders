@@ -9,16 +9,19 @@ export default function About() {
           {/* Text Content */}
           <div className="w-full lg:w-1/2">
             <p className="text-white text-lg leading-relaxed mb-4">
-              At <strong>AM Traders</strong>, Lorem ipsum dolor sit amet,
-              consectetur adipisicing elit. Vitae, maiores molestias dolorum,
-              quidem, quisquam magni natus temporibus ullam adipisci in ducimus
-              harum. Magni suscipit quidem iste cum aperiam enim. Provident.
+              At <strong>AM Traders</strong>, we simplify global trade for
+              businesses of all sizes. From sourcing quality products to
+              managing logistics, we are your one-stop solution for
+              international procurement. With a proven network of verified
+              manufacturers and end-to-end support, we ensure efficiency,
+              reliability, and profitability at every step.
             </p>
             <p className="text-white text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              illo quia ratione ut, cupiditate impedit distinctio sit similique
-              eveniet eum et omnis saepe dolorem aperiam hic laborum magni animi
-              dignissimos.
+              Founded with a vision to simplify cross-border trade, AM Traders
+              has grown into a trusted name in global procurement. Whether
+              youre a startup looking to scale or an enterprise expanding your
+              product line, we provide the tools, expertise, and support you
+              need to succeed in competitive markets.
             </p>
           </div>
 

@@ -6,9 +6,8 @@ import {
   faLinkedinIn,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import Whatsapp from "../common/Whatspp";
 
 export default function Footer() {
   return (
@@ -19,31 +18,68 @@ export default function Footer() {
           Our Branches
         </h3>
         <div className="space-y-6 text-sm flex  items-center justify-center flex-wrap ">
+          {/* Hong Kong Office */}
+          <div className="outline p-2 rounded-2xl min-w-[80%] max-w-[80%]">
+            <p className="font-semibold underline pb-2">
+              Hong Kong Office{" "}
+              <a
+                href="https://www.google.com/maps/place/YOUR_LOCATION_LINK"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  className="ml-2 hover:scale-110"
+                  icon={faArrowUpRightFromSquare}
+                />
+              </a>
+            </p>
+            <p>AM IMPORT AND EXPORT TRADE CO., LIMITED</p>
+            <address>
+              Room D5, 5th Floor
+              <br />
+              King Yip Factory Building
+              <br />
+              No. 59 King Yip Street
+              <br />
+              Kwun Tong, Kowloon
+              <br />
+              Hong Kong
+            </address>
+            <p>📞 0852-6238 4253  </p>
+            <p>
+              📱{" "}
+              <Whatsapp/>
+            </p>
+          </div>
+
           {/* China Office */}
           <div className="outline p-2 rounded-2xl min-w-[80%] max-w-[80%]">
-            
-
-            <p className="font-semibold underline pb-2 ">China Office <a
-            
-              href="https://www.google.com/maps/place/YOUR_LOCATION_LINK"
-              target="_blank"
-            >
-              <FontAwesomeIcon className="ml-2 hover:scale-110" icon={faArrowUpRightFromSquare} />
-            </a></p>
-            
+            <p className="font-semibold underline pb-2 ">
+              China Office{" "}
+              <a
+                href="https://maps.app.goo.gl/EeaJ7vAFyosLeYc88?g_st=iwb"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  className="ml-2 hover:scale-110"
+                  icon={faArrowUpRightFromSquare}
+                />
+              </a>
+            </p>
+            <p>GUANGZHOU AM INTERNATIONAL TRADING LTD</p>
+            <address>
             <p>Room 916, 9/F, Fuli International Shoes Trade Center,</p>
             <p>37 Huan Xi Road, Liwan District,</p>
             <p>Guangzhou City, Guangdong Province</p>
+            </address>
+            
             <p>📞 (020) 3264 4744</p>
             <p>
               📱{" "}
-              <a href="tel:+8613249728354" className="hover:scale-105">
-                +86 13249728354
-              </a>
+              <Whatsapp/>
             </p>
             <p>
               📧{" "}
-              <a href="mailto:Afnastk2@yahoo.com" className="hover:text-lg">
+              <a href="mailto:Afnastk2@yahoo.com" className="hover:font-bold">
                 Afnastk2@yahoo.com
               </a>
             </p>
@@ -51,34 +87,9 @@ export default function Footer() {
               📧{" "}
               <a
                 href="mailto:Amtradingchina@yahoo.com"
-                className="hover:text-lg"
+                className="hover:font-bold"
               >
                 Amtradingchina@yahoo.com
-              </a>
-            </p>
-          </div>
-
-          {/* Hong Kong Office */}
-          <div className="outline p-2 rounded-2xl min-w-[80%] max-w-[80%]">
-            <p className="font-semibold underline pb-2">Hong Kong Office <a
-            
-            href="https://www.google.com/maps/place/YOUR_LOCATION_LINK"
-            target="_blank"
-          >
-            <FontAwesomeIcon className="ml-2 hover:scale-110" icon={faArrowUpRightFromSquare} />
-          </a></p>
-            <p>AM IMPORT AND EXPORT TRADE CO., LIMITED</p>
-            <p>ROOM D5, 5TH FLOOR, KING YIP FACTORY BUILDING,</p>
-            <p>NO.59 KING YIP STREET, KWUN TONG,</p>
-            <p>KOWLOON, HONG KONG</p>
-            <p>📞 0852-6238 4253</p>
-            <p>
-              📱{" "}
-              <a
-                href="tel:+861324972854354"
-                className="transition-all hover:text-lg"
-              >
-                +86 1324972854354
               </a>
             </p>
           </div>
@@ -125,10 +136,10 @@ export default function Footer() {
           <p className="text-sm mb-2">
             Email:{" "}
             <a
-              href="mailto:mtradingchina@yahoo.com"
+              href="mailto:Amtradingchina@yahoo.com"
               className="hover:text-white"
             >
-              mtradingchina@yahoo.com
+              Amtradingchina@yahoo.com
             </a>
           </p>
           <p className="text-sm">
@@ -139,9 +150,7 @@ export default function Footer() {
           </p>
           <p className="text-sm">
             Phone:{" "}
-            <a href="tel:+86 13249728354" className="hover:text-white">
-              +86 13249728354
-            </a>
+            <Whatsapp/>
           </p>
         </div>
 

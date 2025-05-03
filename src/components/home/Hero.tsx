@@ -11,12 +11,19 @@ const Hero = () => {
         src="/images/heroBg.jpg"
         alt=""
         priority
-        unoptimized
+        // unoptimized
         className=" absolute inset-0 fill-accent-blue  w-full h-[550px] object-cover object-top"
       ></Image>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50 " />
+      <div className="absolute inset-0">
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black/50" />
+        {/* Maroon gradient top */}
+        <div className="absolute h-[40%] inset-0 bg-gradient-to-b from-header-bg via-transparent to-transparent" />
+
+      </div>
+
       <div className="relative">
         {/* Main Heading */}
         <h1 className="animate-text-flicker-in-glow text-4xl font-arial text-white font-extrabold  mb-8 ">
@@ -27,14 +34,15 @@ const Hero = () => {
           </span>
         </h1>
 
-        <Image
+        {/* plane */}
+        {/* <Image
           className="absolute top-0 z-10 delay-200  animate-zigzag-fly"
           width={100}
           height={20}
           src="/images/plane.png"
           alt=""
           unoptimized
-        />
+        /> */}
 
         {/* Subheading */}
         <h3 className="text-lg md:text-xl font-bold text-white    font-trebuchet p-2 mb-6 animate-zoom-in-out text-justify">
@@ -48,7 +56,8 @@ const Hero = () => {
           <Link
             href="/"
             target="_blank"
-            className=" bg-primary font-semibold text-nowrap w-max left- text-black gap-3 p-4   rounded-md bg-white transition-transform transform hover:bg-card-bg hover:text-white flex items-center sm:ml-[calc(2*30%)] ml-[20%] animate-right2left"
+            className=" bg-primary font-semibold text-nowrap w-max left- text-black gap-3 p-4   rounded-md bg-white transition-transform transform hover:bg-card-bg 
+            hover:-translate-y-0.5 hover:text-white flex items-center sm:ml-[calc(2*30%)] ml-[20%] animate-right2left"
           >
             {/* <FontAwesomeIcon icon={faUsers} className="animate-zoom-in-out" /> */}
             Our Services
@@ -56,7 +65,7 @@ const Hero = () => {
           <Link
             href="/"
             target="_blank"
-            className=" bg-primary font-semibold text-nowrap w-max left- text-black gap-3 p-4   rounded-md  bg-white  hover:bg-card-bg hover:text-white flex items-center  animate-right2left"
+            className=" bg-primary font-semibold text-nowrap w-max left- text-black gap-3 p-4   rounded-md  bg-white  hover:bg-card-bg hover:text-white hover:-translate-y-0.5 flex items-center  animate-right2left transition"
           >
             Get Quote
           </Link>
