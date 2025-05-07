@@ -54,8 +54,8 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <header className=" bg-header-bg  ">
-      <div className="mx-auto max-w-6xl  flex p-3 h-20 justify-between items-center">
+    <header className=" bg-black  fixed top-0 w-full z-10">
+      <div className="mx-auto max-w-6xl  flex p-1  justify-between items-center">
         {/* Logo Section */}
         <div className="rounded-full ml-5 flex items-center gap-2">
           <Image

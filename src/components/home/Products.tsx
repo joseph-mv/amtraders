@@ -1,5 +1,6 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 type Category = {
   icon: string;
@@ -58,9 +59,35 @@ const categories: Category[] = [
   },
 ];
 
+
+
 const ProductCategories = () => {
+
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+  
+    //scroll x-direction while mouse scroll
+    useEffect(() => { 
+      const scrollContainer = scrollRef.current;
+  
+      if (scrollContainer) {
+        const handleWheel = (e:WheelEvent) => {
+          if (e.deltaY !== 0) {
+            e.preventDefault();
+            scrollContainer.scrollLeft += e.deltaY;
+          }
+        };
+  
+        scrollContainer.addEventListener("wheel", handleWheel);
+  
+        return () => {
+          scrollContainer.removeEventListener("wheel", handleWheel);
+        };
+      }
+    }, []);
   return (
     <section className="relative w-full px-4 md:px-12 py-16  text-text-secondary">
+      {/* <div className="max-w-6xl mx-aut"> */}
       {/* Section Title */}
       
             <div className="absolute inset-0  -z-10">
@@ -76,7 +103,7 @@ const ProductCategories = () => {
             <div className="bg-black/40 absolute inset-0"></div>
             </div>
       <div className="max-w-4xl mx-auto text-center mb-10">
-        <h2 className="text-3xl text-white underline md:text-4xl font-bold mb-4">Our Product Categories</h2>
+        <h2 className="text-3xl text-white  md:text-4xl font-bold mb-4">Our Product Categories</h2>
         <p className="text-lg text-white">
           At AM Traders, we source a wide range of high-quality products across diverse industries. Whether you are building a brand, expanding a store, or supplying bulk for projects, our product categories are curated to meet global demand with reliability and cost-efficiency.
         </p>
@@ -84,10 +111,13 @@ const ProductCategories = () => {
 
       {/* Category Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        {categories.map((category, idx) => (
+      </div>
+
+      <div data-aos="fade-left" className="flex space-x-4 p-2 overflow-y-hidden overflow-x-auto scrollbar-hide font-trebuchet" ref={scrollRef} > 
+      {categories.map((category, idx) => (
           <div
             key={idx}
-            className="flex items-start gap-4 p-5 bg-white rounded-xl shadow hover:shadow-md transition"
+            className="flex items-start min-w-[300px] w-[50%] gap-4 p-5 bg-white rounded-tl-2xl  rounded-br-2xl shadow hover:shadow-md transition"
           >
             <span className="text-3xl">{category.icon}</span>
             <div>
@@ -106,6 +136,7 @@ const ProductCategories = () => {
           Share your requirements—we’ll find the right supplier and manage the rest.
         </p>
       </div>
+      {/* </div> */}
     </section>
   );
 };

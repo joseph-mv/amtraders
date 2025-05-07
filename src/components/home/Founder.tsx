@@ -2,15 +2,16 @@ import Image from "next/image";
 
 const Founder = () => {
   return (
-    <section className="max-w-4xl mx-auto mt-8">
+    <section className=" mx-auto  bg-white">
+      <div className="max-w-6xl mx-auto pt-4">
       {/* Section Title */}
-      <h1 className="text-center text-3xl font-bold text-text-secondary">OUR FOUNDER</h1>
+      <h1 className="text-center  text-3xl font-bold text-text-secondary">OUR FOUNDER</h1>
       <h3 className="font-serif text-lg md:ml-20 text-end mx-4 ">
         
       </h3>
       <div className="flex items-start gap-6 mx-4">
         <div className=" relative self-end min-w-44 w-44 bg-card-bg h-54 mt-28 float-left ">
-          <Image
+          <Image data-aos='fade-left'
             className="absolute -top-[50%]  min-w-44 w-44 object-contain "
             src="/images/founder.png"
             alt=""
@@ -27,6 +28,7 @@ const Founder = () => {
           <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste totam veniam minima dignissimos doloribus numquam sit aliquam atque molestiae rerum, sunt recusandae debitis expedita modi sapiente pariatur eaque porro?</p>
           
         </div>
+      </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className=" relative  w-[100vw] h-[550px] overflow-hidden bg-blend-overlay antialiased flex flex-col justify-center pl-[calc(2*10%)] pr-[10%]">
+    <section className="fixed top-10 -z-10 w-[100vw] h-[550px] overflow-hidden bg-blend-overlay antialiased flex flex-col justify-center pl-[calc(2*10%)] pr-[10%]">
       <Image
         width={1800}
         height={1800}
@@ -20,7 +20,7 @@ const Hero = () => {
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black/50" />
         {/* Maroon gradient top */}
-        <div className="absolute h-[40%] inset-0 bg-gradient-to-b from-header-bg via-transparent to-transparent" />
+        {/* <div className="absolute h-[40%] inset-0 bg-gradient-to-b from-header-bg via-transparent to-transparent" /> */}
 
       </div>
 
