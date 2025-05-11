@@ -21,7 +21,7 @@ const navLinks = [
   {
     href: "/about",
     icon: faCircleExclamation,
-    label: "About",
+    label: "About Us",
   },
   {
     href: "/services",
@@ -109,7 +109,7 @@ const Header = () => {
                 <Link
                   onClick={toggleMenu}
                   href={href}
-                  className="link flex items-center gap-2 p-2 hover:scale-105 "
+                  className="link flex items-center gap-2 p-2 hover:scale-105 transition duration-200"
                 >
                   <FontAwesomeIcon icon={icon} className={`text-xl mr-2`} />
                   <span>{label}</span>

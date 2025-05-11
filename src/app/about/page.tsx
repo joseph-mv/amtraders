@@ -1,5 +1,6 @@
-'use client'
-import { motion } from "framer-motion";
+"use client";
+
+import Footer from "@/components/layout/Footer";
 
 const values = [
   {
@@ -35,15 +36,11 @@ const audience = [
 
 const AboutUs = () => {
   return (
-    <section className="w-full px-4 md:px-12 py-10 bg-white text-gray-800">
+    <>
+    
+    <section className="w-full mt-9 px-4 md:px-12 py-10 bg-white text-gray-800">
       {/* Intro */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="max-w-5xl mx-auto text-center"
-      >
+      <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Your Global Trade Partner for Smart, Secure, and Scalable Sourcing
         </h2>
@@ -53,24 +50,20 @@ const AboutUs = () => {
           a robust international network, we help businesses around the world
           source quality products with confidence and ease.
         </p>
-      </motion.div>
+      </div>
 
       {/* What We Stand For */}
       <div className="mt-12 max-w-6xl mx-auto">
         <h3 className="text-2xl font-semibold mb-6">What We Stand For</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {values.map((item, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.4 }}
-              viewport={{ once: true }}
               className="p-4 border rounded-xl shadow-sm hover:shadow-md transition"
             >
               <h4 className="font-semibold text-lg mb-1">✅ {item.title}</h4>
               <p className="text-sm text-gray-700">{item.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -104,11 +97,13 @@ const AboutUs = () => {
           ))}
         </ul>
         <p className="mt-4">
-          Wherever you are in your sourcing journey, <strong>AM Traders</strong>{' '}
+          Wherever you are in your sourcing journey, <strong>AM Traders</strong>{" "}
           is here to make it simple, secure, and successful.
         </p>
       </div>
     </section>
+    <Footer/>
+    </>
   );
 };
 

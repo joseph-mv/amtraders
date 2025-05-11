@@ -26,7 +26,7 @@ const Hero = () => {
 
       <div className="relative">
         {/* Main Heading */}
-        <h1 className="animate-text-flicker-in-glow text-4xl font-arial text-white font-extrabold  mb-8 ">
+        <h1 className=" text-4xl font-arial text-white font-extrabold  mb-8 ">
           {" "}
           Global Trade with{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-white">
@@ -45,7 +45,7 @@ const Hero = () => {
         /> */}
 
         {/* Subheading */}
-        <h3 className="text-lg md:text-xl font-bold text-white    font-trebuchet p-2 mb-6 animate-zoom-in-out text-justify">
+        <h3 className="text-lg md:text-xl font-bold text-white    font-trebuchet p-2 mb-6  text-justify">
           Your trusted partner in international trade. We connect businesses
           worldwide with reliable import-export solutions and logistics
           expertise.
@@ -56,8 +56,8 @@ const Hero = () => {
           <Link
             href="/"
             target="_blank"
-            className=" bg-primary font-semibold text-nowrap w-max left- text-black gap-3 p-4   rounded-md bg-white transition-transform transform hover:bg-card-bg 
-            hover:-translate-y-0.5 hover:text-white flex items-center sm:ml-[calc(2*30%)] ml-[20%] animate-right2left"
+            className=" bg-primary font-semibold text-nowrap w-max  text-black gap-3 p-4   rounded-md bg-white  transform hover:bg-card-bg 
+            hover:-translate-y-0.5 hover:text-white flex items-center sm:ml-[calc(2*30%)] ml-[20%] animate-right2left transition duration-700"
           >
             {/* <FontAwesomeIcon icon={faUsers} className="animate-zoom-in-out" /> */}
             Our Services
@@ -65,7 +65,7 @@ const Hero = () => {
           <Link
             href="/"
             target="_blank"
-            className=" bg-primary font-semibold text-nowrap w-max left- text-black gap-3 p-4   rounded-md  bg-white  hover:bg-card-bg hover:text-white hover:-translate-y-0.5 flex items-center  animate-right2left transition"
+            className=" bg-primary font-semibold text-nowrap w-max  text-black gap-3 p-4   rounded-md  bg-white  hover:bg-card-bg hover:text-white hover:-translate-y-0.5 flex items-center  animate-right2left transition duration-700 "
           >
             Get Quote
           </Link>

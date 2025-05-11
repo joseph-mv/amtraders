@@ -117,7 +117,7 @@ const ProductCategories = () => {
       {categories.map((category, idx) => (
           <div
             key={idx}
-            className="flex items-start min-w-[300px] w-[50%] gap-4 p-5 bg-white rounded-tl-2xl  rounded-br-2xl shadow hover:shadow-md transition"
+            className="flex items-start min-w-[300px] md:min-w-[360px] w-[50%] gap-4 p-5 bg-white rounded-tl-2xl  rounded-br-2xl shadow hover:shadow-md transition"
           >
             <span className="text-3xl">{category.icon}</span>
             <div>

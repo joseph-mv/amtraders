@@ -25,8 +25,7 @@ const Founder = () => {
           <h4 className="mt-10 mb-2 text-lg underline font-bold">AFNAS TK</h4>
           <h3 className="font-bold">Managing Director</h3>
           <h3 className="font-bold">AM Import and Export Trade Co.Limited</h3>
-          <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste totam veniam minima dignissimos doloribus numquam sit aliquam atque molestiae rerum, sunt recusandae debitis expedita modi sapiente pariatur eaque porro?</p>
-          
+          <p className="pt-4">AM Trading Company is a globally trusted trading partner, specializing in sourcing high-quality products from top suppliers across China and delivering them to clients worldwide with rigorous inspection standards. Founded with a commitment to reliability and excellence, we ensure seamless international trade solutions tailored to each customer&#39;s needs</p>
         </div>
       </div>
       </div>
