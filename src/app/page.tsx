@@ -8,19 +8,19 @@ import Services from "@/components/home/Services";
 import WhatsappButton from "@/components/home/WhatsappButton";
 import WhyChoose from "@/components/home/WhyChoose";
 
-
 export default function Home() {
   return (
     <>
-      <Hero/>
-      <About/>
-      <Services/>
-      <ProductCategories/>
-      <Contact/>
-      <WhyChoose/>
-      <Founder/>
-      <Footer/>
-      <WhatsappButton/>
+      <Hero />
+      <About />
+      <Services />
+      <ProductCategories />
+      <Contact />
+      <WhyChoose />
+      <Founder />
+
+      <Footer />
+      <WhatsappButton />
     </>
   );
 }

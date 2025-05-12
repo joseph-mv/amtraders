@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 
 const benefits = [
   {
@@ -34,6 +35,32 @@ const benefits = [
   },
 ];
 function WhyChoose() {
+  useEffect(() => {
+    const container = document.getElementById("scrollContainer");
+    if (!container) return;
+
+    const handleWheel = (event: WheelEvent) => {
+      const deltaY = event.deltaY;
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight;
+      const clientHeight = container.clientHeight;
+
+      const atTop = scrollTop <= 100 && deltaY < 0;
+      const atBottom =
+        scrollTop + clientHeight >= scrollHeight - 100 && deltaY > 0;
+      console.log(atTop, atBottom);
+
+      if (atTop || atBottom) {
+        console.log("scroll");
+        event.preventDefault();
+        window.scrollBy(0, deltaY);
+      }
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+    return () => container.removeEventListener("wheel", handleWheel);
+  }, []);
+
   return (
     <section className="bg-white relative h-[400px]">
       {/* Bg image */}
@@ -43,34 +70,33 @@ function WhyChoose() {
           width={1000}
           height={400}
           alt=""
-          className="w-full object-left object-cover h-[400px]"
+          className="w-full object-[10%] sm:object-left object-cover h-[400px]"
         />
       </div>
 
-      {/* Scroll container */}
+      <h1 className="text-white sm:hidden absolute top-4 text-center w-full text-4xl font-extrabold ">
+        WHY CHOOSE US ?
+      </h1>
 
- 
-   
-        <div className="relative flex flex-col   scrollbar-hide snap-y snap-mandatory  w-full  float-right  h-[400px] overflow-y-scroll scroll-auto">
-         
+      {/* Scroll container */}
+      <div
+        id="scrollContainer"
+        className="relative scroll-container flex flex-col   scrollbar-hide snap-y snap-mandatory  w-full  float-right  h-[400px] overflow-y-scroll scroll-smooth"
+      >
         {benefits.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-5 ml-[calc(20vw+10%)] mt-40 mb-40 rounded-xl snap-center shadow p-5  bg-black/50 mr-2 flex items-start gap-4"
-             >
-              <div>
-                <h3 className="font-semibold text-white text-lg">{`${index + 1}. ${
-                  item.title
-                }`}</h3>
-                <p className="text-sm text-white mt-1 text-justify">{item.description}</p>
-              </div>
+          <div
+            key={index}
+            className="bg-gray-5 ml-[calc(20vw+10%)] mt-40 mb-40 rounded-xl snap-center p-5   mr-2 flex items-start gap-4"
+          >
+            <div>
+              <h3 className="font-semibold text-black text-lg">{` ${item.title}`}</h3>
+              <p className="text-2xl text-white font-bold mt-1 text-justify">
+                {item.description}
+              </p>
             </div>
-          ))}
           </div>
-        
-      
-        
-      
+        ))}
+      </div>
     </section>
   );
 }
