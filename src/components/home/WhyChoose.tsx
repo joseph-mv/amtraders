@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const benefits = [
   {
@@ -35,11 +35,16 @@ const benefits = [
   },
 ];
 function WhyChoose() {
+  const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const container = document.getElementById("scrollContainer");
+    const container = scrollRef.current;
     if (!container) return;
+    let positioned = false;
 
     const handleWheel = (event: WheelEvent) => {
+      if (!positioned) {
+        event.preventDefault();
+      }
       const deltaY = event.deltaY;
       const scrollTop = container.scrollTop;
       const scrollHeight = container.scrollHeight;
@@ -48,12 +53,28 @@ function WhyChoose() {
       const atTop = scrollTop <= 100 && deltaY < 0;
       const atBottom =
         scrollTop + clientHeight >= scrollHeight - 100 && deltaY > 0;
-      console.log(atTop, atBottom);
+
+      // const reat=isElementInViewport(container)
+      const rect = container.getBoundingClientRect();
+      if (
+        (rect.top > 0 && deltaY > 0 && !positioned) ||
+        (rect.top < 0 && deltaY < 0 && !positioned)
+      ) {
+        container.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "center",
+        });
+
+        setTimeout(() => {
+          positioned = true;
+        }, 100);
+      }
 
       if (atTop || atBottom) {
-        console.log("scroll");
         event.preventDefault();
         window.scrollBy(0, deltaY);
+        positioned = false;
       }
     };
 
@@ -62,17 +83,14 @@ function WhyChoose() {
   }, []);
 
   return (
-    <section className="bg-white relative h-[400px]">
+    <section className="bg-accent-blue relative h-[400px]">
       {/* Bg image */}
-      <div className="inset-0 absolute left-0 right-0">
-        <Image
-          src="/images/why-choose.jpg"
-          width={1000}
-          height={400}
-          alt=""
-          className="w-full object-[10%] sm:object-left object-cover h-[400px]"
-        />
-      </div>
+      <Image
+        src="/images/why-choose.jpg"
+        fill
+        alt=""
+        className="w-full object-[10%] sm:object-left object-cover h-[400px]"
+      />
 
       <h1 className="text-white sm:hidden absolute top-4 text-center w-full text-4xl font-extrabold ">
         WHY CHOOSE US ?
@@ -80,8 +98,8 @@ function WhyChoose() {
 
       {/* Scroll container */}
       <div
-        id="scrollContainer"
         className="relative scroll-container flex flex-col   scrollbar-hide snap-y snap-mandatory  w-full  float-right  h-[400px] overflow-y-scroll scroll-smooth"
+        ref={scrollRef}
       >
         {benefits.map((item, index) => (
           <div
@@ -89,7 +107,13 @@ function WhyChoose() {
             className="bg-gray-5 ml-[calc(20vw+10%)] mt-40 mb-40 rounded-xl snap-center p-5   mr-2 flex items-start gap-4"
           >
             <div>
-              <h3 className="font-semibold text-black text-lg">{` ${item.title}`}</h3>
+              <span className="border-2 bg-accent-green w-10 h-10 font-bold ml-auto border-white rounded-full flex justify-center items-center ">
+                {index + 1}
+              </span>
+              <h3 className="flex font-semibold text-black text-lg">
+                {" "}
+                {` ${item.title}`}
+              </h3>
               <p className="text-2xl text-white font-bold mt-1 text-justify">
                 {item.description}
               </p>

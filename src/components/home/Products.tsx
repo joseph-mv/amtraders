@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
@@ -59,62 +59,90 @@ const categories: Category[] = [
   },
 ];
 
-
-
 const ProductCategories = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollContRef = useRef<HTMLDivElement>(null);
 
+  //scroll x-direction while mouse scroll
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    const scrollEvent = scrollContRef.current;
+    let positioned = false;
 
-    const scrollRef = useRef<HTMLDivElement>(null);
-  
-    //scroll x-direction while mouse scroll
-    useEffect(() => { 
-      const scrollContainer = scrollRef.current;
-  
-      if (scrollContainer) {
-        const handleWheel = (e:WheelEvent) => {
-          if (e.deltaY !== 0) {
-            e.preventDefault();
-            scrollContainer.scrollLeft += e.deltaY;
-          }
-        };
-  
-        scrollContainer.addEventListener("wheel", handleWheel);
-  
-        return () => {
-          scrollContainer.removeEventListener("wheel", handleWheel);
-        };
-      }
-    }, []);
+    if (scrollContainer && scrollEvent) {
+      const handleWheel = (e: WheelEvent) => {
+        const deltaY = e.deltaY;
+        const { scrollLeft, clientWidth, scrollWidth } = scrollContainer;
+
+        const atLeft = scrollLeft == 0 && deltaY < 0;
+        const atRight = scrollLeft + clientWidth >= scrollWidth && deltaY > 0;
+
+        const rect = scrollEvent.getBoundingClientRect();
+        if (
+          (rect.top > 0 && deltaY > 0 && !positioned) ||
+          (rect.top < 0 && deltaY < 0 && !positioned)
+        ) {
+          scrollEvent.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+          setTimeout(() => {
+            positioned = true;
+          }, 100);
+        }
+        console.log(positioned);
+        if (!atLeft && !atRight && positioned) {
+          e.preventDefault();
+          scrollContainer.scrollLeft += e.deltaY;
+        }
+        if ((atLeft && deltaY < 0) || (atRight && deltaY > 0)) {
+          positioned = false;
+        }
+      };
+
+      scrollEvent.addEventListener("wheel", handleWheel);
+
+      return () => {
+        scrollEvent.removeEventListener("wheel", handleWheel);
+      };
+    }
+  }, []);
   return (
-    <section className="relative w-full px-4 md:px-12 py-16  text-text-secondary">
-      {/* <div className="max-w-6xl mx-aut"> */}
+    <section
+      className="relative bg-accent-blue w-full  md:px-12 py-16  text-text-secondary"
+      ref={scrollContRef}
+    >
       {/* Section Title */}
-      
-            <div className="absolute inset-0  -z-10">
-            <Image
-              width={1800}
-              height={1800}
-              src="/images/products.jpg"
-              alt=""
-              priority
-              // unoptimized
-              className=" absolute inset-0 fill-accent-blue  w-full h-full object-cover "
-            ></Image>
-            <div className="bg-black/40 absolute inset-0"></div>
-            </div>
-      <div className="max-w-4xl mx-auto text-center mb-10">
-        <h2 className="text-3xl text-white  md:text-4xl font-bold mb-4">Our Product Categories</h2>
+
+      <div className="">
+        <Image
+          fill
+          src="/images/products.jpg"
+          alt=""
+          priority
+          // unoptimized
+          className=" fill-accent-blue  w-full h-full object-cover "
+        ></Image>
+        <div className="bg-black/40 absolute inset-0"></div>
+      </div>
+      <div className="relative   mx-4 text-center mb-10">
+        <h2 className="text-3xl text-white  md:text-4xl font-bold mb-4">
+          Our Product Categories
+        </h2>
         <p className="text-lg text-white">
-          At AM Traders, we source a wide range of high-quality products across diverse industries. Whether you are building a brand, expanding a store, or supplying bulk for projects, our product categories are curated to meet global demand with reliability and cost-efficiency.
+          At AM Traders, we source a wide range of high-quality products across
+          diverse industries. Whether you are building a brand, expanding a
+          store, or supplying bulk for projects, our product categories are
+          curated to meet global demand with reliability and cost-efficiency.
         </p>
       </div>
 
-      {/* Category Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-      </div>
-
-      <div data-aos="fade-left" className="flex space-x-4 p-2 overflow-y-hidden overflow-x-auto scrollbar-hide font-trebuchet" ref={scrollRef} > 
-      {categories.map((category, idx) => (
+      <div
+        className="relative flex space-x-4 px-4 overflow-y-hidden  overflow-x-auto scrollbar-hide font-trebuchet "
+        ref={scrollRef}
+      >
+        {categories.map((category, idx) => (
           <div
             key={idx}
             className="flex items-start min-w-[300px] md:min-w-[360px] w-[50%] gap-4 p-5 bg-white rounded-tl-2xl  rounded-br-2xl shadow hover:shadow-md transition"
@@ -122,18 +150,23 @@ const ProductCategories = () => {
             <span className="text-3xl">{category.icon}</span>
             <div>
               <h3 className="text-xl font-semibold">{category.title}</h3>
-              <p className="text-gray-700 text-sm mt-1">{category.description}</p>
+              <p className="text-gray-700 text-sm mt-1">
+                {category.description}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Custom Sourcing */}
-      <div className="mt-12 max-w-3xl mx-auto text-center">
-        <h3 className="text-2xl font-semibold mb-2 text-white">🚀 Custom Sourcing Available</h3>
+      <div className="relative mt-12 max-w-3xl mx-auto text-center">
+        <h3 className="text-2xl font-semibold mb-2 text-white">
+          🚀 Custom Sourcing Available
+        </h3>
         <p className="text-gray-100 text-md">
-          Looking for something specific? Our team can source any product category not listed above.
-          Share your requirements—we’ll find the right supplier and manage the rest.
+          Looking for something specific? Our team can source any product
+          category not listed above. Share your requirements—we’ll find the
+          right supplier and manage the rest.
         </p>
       </div>
       {/* </div> */}

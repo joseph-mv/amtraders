@@ -1,6 +1,7 @@
 'use client';
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -62,8 +63,17 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-white  py-20 px-4 md:px-10">
+    <section className="relative bg-white  py-20 px-4 md:px-10">
       <ToastContainer />
+      <div className=" z-1 h-full w-full">
+          
+            <Image
+              fill
+              src="/images/shape/shape-dotted-light.svg"
+              alt="Dotted"
+              className="hidden dark:block"
+            />
+          </div>
       <div className="max-w-6xl  mx-auto grid grid-cols-1 rounded-3xl p-2 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="space-y-6 text-center ">

@@ -4,15 +4,14 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="fixed top-10 -z-10 w-[100vw] h-[550px] overflow-hidden bg-blend-overlay antialiased flex flex-col justify-center pl-[calc(2*10%)] pr-[10%]">
+    <section className="fixed top-10 -z-10 w-[100vw] h-[90vh] overflow-hidden bg-blend-overlay antialiased flex flex-col justify-center pl-[calc(2*10%)] pr-[10%]">
       <Image
-        width={1800}
-        height={1800}
+        fill
         src="/images/heroBg.jpg"
         alt=""
         priority
         // unoptimized
-        className=" absolute inset-0 fill-accent-blue  w-full h-[550px] object-cover object-top"
+        className="fill-accent-blue  w-full h-[90vh] object-cover object-top"
       ></Image>
 
       {/* Dark overlay */}
