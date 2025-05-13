@@ -20,7 +20,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/50" />
         {/* Maroon gradient top */}
         {/* <div className="absolute h-[40%] inset-0 bg-gradient-to-b from-header-bg via-transparent to-transparent" /> */}
-
       </div>
 
       <div className="relative">

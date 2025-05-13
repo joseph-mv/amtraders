@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Whatsapp from "../common/Whatspp";
+import { chinaLocation } from "@/constant";
 
 export default function Footer() {
   return (
@@ -56,7 +57,7 @@ export default function Footer() {
             <p className="font-semibold underline pb-2 ">
               China Office{" "}
               <a
-                href="https://maps.app.goo.gl/EeaJ7vAFyosLeYc88?g_st=iwb"
+                href={chinaLocation}
                 target="_blank"
               >
                 <FontAwesomeIcon

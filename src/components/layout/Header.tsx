@@ -111,7 +111,7 @@ const Header = () => {
                   href={href}
                   className="link flex items-center gap-2 p-2 hover:scale-105 transition duration-200"
                 >
-                  <FontAwesomeIcon icon={icon} className={`text-xl mr-2`} />
+                  <FontAwesomeIcon icon={icon} className={` mr-`} />
                   <span>{label}</span>
                 </Link>
               </div>
