@@ -63,11 +63,20 @@ const ProductCategories = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollContRef = useRef<HTMLDivElement>(null);
 
+  const handleMouseEnter = () => {
+
+    const scrollEvent = scrollContRef.current;
+    scrollEvent?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+  };
+
   //scroll x-direction while mouse scroll
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     const scrollEvent = scrollContRef.current;
-    let positioned = false;
 
     if (scrollContainer && scrollEvent) {
       const handleWheel = (e: WheelEvent) => {
@@ -75,29 +84,11 @@ const ProductCategories = () => {
         const { scrollLeft, clientWidth, scrollWidth } = scrollContainer;
 
         const atLeft = scrollLeft == 0 && deltaY < 0;
-        const atRight = scrollLeft + clientWidth >= scrollWidth && deltaY > 0;
-
-        const rect = scrollEvent.getBoundingClientRect();
-        if (
-          (rect.top > 0 && deltaY > 0 && !positioned) ||
-          (rect.top < 0 && deltaY < 0 && !positioned)
-        ) {
-          scrollEvent.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-          });
-          setTimeout(() => {
-            positioned = true;
-          }, 100);
-        }
-        console.log(positioned);
-        if (!atLeft && !atRight && positioned) {
+        const atRight = scrollLeft + clientWidth >= scrollWidth -5 && deltaY > 0;
+        console.log(scrollLeft , clientWidth , scrollWidth)
+        if (!atLeft && !atRight) {
           e.preventDefault();
           scrollContainer.scrollLeft += e.deltaY;
-        }
-        if ((atLeft && deltaY < 0) || (atRight && deltaY > 0)) {
-          positioned = false;
         }
       };
 
@@ -112,6 +103,7 @@ const ProductCategories = () => {
     <section
       className="relative bg-accent-blue w-full  md:px-12 py-16  text-text-secondary"
       ref={scrollContRef}
+      onMouseEnter={handleMouseEnter}
     >
       {/* Section Title */}
 

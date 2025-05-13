@@ -39,13 +39,10 @@ function WhyChoose() {
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
-    let positioned = false;
 
     const handleWheel = (event: WheelEvent) => {
-      if (!positioned) {
-        event.preventDefault();
-      }
       const deltaY = event.deltaY;
+
       const scrollTop = container.scrollTop;
       const scrollHeight = container.scrollHeight;
       const clientHeight = container.clientHeight;
@@ -54,36 +51,28 @@ function WhyChoose() {
       const atBottom =
         scrollTop + clientHeight >= scrollHeight - 100 && deltaY > 0;
 
-      // const reat=isElementInViewport(container)
-      const rect = container.getBoundingClientRect();
-      if (
-        (rect.top > 0 && deltaY > 0 && !positioned) ||
-        (rect.top < 0 && deltaY < 0 && !positioned)
-      ) {
-        container.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "center",
-        });
-
-        setTimeout(() => {
-          positioned = true;
-        }, 100);
-      }
-
       if (atTop || atBottom) {
         event.preventDefault();
         window.scrollBy(0, deltaY);
-        positioned = false;
       }
     };
 
     container.addEventListener("wheel", handleWheel, { passive: false });
     return () => container.removeEventListener("wheel", handleWheel);
   }, []);
+  const handleMouseEnter = () => {
+
+    const scrollEvent = scrollRef.current;
+    scrollEvent?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+  };
 
   return (
-    <section className="bg-accent-blue relative h-[400px]">
+    <section className="bg-accent-blue relative h-[400px]"
+    onMouseEnter={handleMouseEnter}>
       {/* Bg image */}
       <Image
         src="/images/why-choose.jpg"
