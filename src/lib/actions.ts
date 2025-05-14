@@ -23,7 +23,7 @@ export async function handleContactForm(prevState:{ success: boolean, error: nul
 
     await transporter.sendMail({
       from: `"${name}" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER, // or another recipient
+      to: 'Amtradingchina@yahoo.com', // or another recipient
       subject: `New Inquiry: ${inquiryType}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>

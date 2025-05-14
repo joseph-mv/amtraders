@@ -1,108 +1,97 @@
 "use client";
 
+import WhatWeStandFor from "@/components/about/WhatWeStandFor";
+import WhoWeServe from "@/components/about/WhoWeServe";
 import Footer from "@/components/layout/Footer";
-
-const values = [
-  {
-    title: "Integrity First",
-    desc: "We build long-term relationships through transparent practices and honest communication—with our clients, suppliers, and partners.",
-  },
-  {
-    title: "Customer-Centric Approach",
-    desc: "Your success is our priority. Every service we offer is tailored to meet your specific business goals, no matter your size or industry.",
-  },
-  {
-    title: "Reliability Through Experience",
-    desc: "From factory floors to final delivery, we manage every stage of the sourcing process with precision and accountability.",
-  },
-  {
-    title: "Quality Without Compromise",
-    desc: "We follow strict quality control standards—including product inspections, supplier verification, and audit trails—so you get exactly what you ordered.",
-  },
-  {
-    title: "Efficiency at Every Step",
-    desc: "With smart sourcing, expert negotiations, and optimized logistics, we reduce your time-to-market and increase your profit margins.",
-  },
-];
-
-const audience = [
-  "Importers and wholesalers",
-  "E-commerce retailers",
-  "Brick-and-mortar stores",
-  "Construction firms and manufacturers",
-  "Startups launching private labels",
-  "Entrepreneurs expanding into new categories",
-];
+import Image from "next/image";
 
 const AboutUs = () => {
   return (
     <>
-    
-    <section className="w-full mt-9 px-4 md:px-12 py-10 bg-white text-gray-800">
-      {/* Intro */}
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Your Global Trade Partner for Smart, Secure, and Scalable Sourcing
-        </h2>
-        <p className="text-lg">
-          At <strong>AM Traders</strong>, we are more than just sourcing
-          experts—we are solution providers. With years of industry insight and
-          a robust international network, we help businesses around the world
-          source quality products with confidence and ease.
-        </p>
-      </div>
+      <section className="w-full mt-9 px-4 md:px-12 py-10 bg-gray-50 text-gray-800">
+        <div className=" max-w-7xl mx-auto p-6 sm:p-8  mb-12">
 
-      {/* What We Stand For */}
-      <div className="mt-12 max-w-6xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-6">What We Stand For</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {values.map((item, idx) => (
-            <div
-              key={idx}
-              className="p-4 border rounded-xl shadow-sm hover:shadow-md transition"
-            >
-              <h4 className="font-semibold text-lg mb-1">✅ {item.title}</h4>
-              <p className="text-sm text-gray-700">{item.desc}</p>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-6 text-gray-800">
+            About Us
+          </h1>
+          {/* Intro */}
+          <div className=" flex flex-wrap justify-between  items-center gap-6">
+            <div className="w-full lg:w-[45%]">
+              <p className=" text-lg leading-relaxed mb-4 text-justify">
+                At <strong>AM Traders</strong>, we simplify global trade for
+                businesses of all sizes. From sourcing quality products to
+                managing logistics, we are your one-stop solution for
+                international procurement. With a proven network of verified
+                manufacturers and end-to-end support, we ensure efficiency,
+                reliability, and profitability at every step.
+              </p>
+              <p className=" text-lg leading-relaxed text-justify">
+                Founded with a vision to simplify cross-border trade, AM Traders
+                has grown into a trusted name in global procurement. Whether
+                youre a startup looking to scale or an enterprise expanding your
+                product line, we provide the tools, expertise, and support you
+                need to succeed in competitive markets.
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Mission and Vision */}
-      <div className="mt-12 max-w-4xl mx-auto space-y-6">
-        <div>
-          <h3 className="text-2xl font-semibold">Our Mission</h3>
-          <p className="text-gray-700 mt-2">
-            To empower businesses worldwide by providing seamless access to
-            reliable products, transparent sourcing processes, and end-to-end
-            trade support—ensuring growth, efficiency, and peace of mind.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-2xl font-semibold">Our Vision</h3>
-          <p className="text-gray-700 mt-2">
-            To be a globally recognized sourcing partner that transforms how
-            businesses manage procurement—by making international trade smarter,
-            safer, and more accessible.
-          </p>
-        </div>
-      </div>
+            {/* Image */}
+            <div className="w-full lg:w-[45%]">
+              <Image
+                src="/images/about/about1.jpg" // Replace with your image path
+                alt="Global export and import"
+                width={600}
+                height={400}
+                className="w-full h-auto rounded-2xl shadow-md "
+              />
+            </div>
+          </div>
+    <hr className="mt-6  text-gray-300"/>
+          <div className="max-w-5xl mx-auto text-center mt-6 ">
+            <h1 className="text-2xl sm:text-3xl  font-extrabold text-center mb-6 text-gray-800">
+              Your Global Trade Partner for Smart, Secure, and Scalable Sourcing
+            </h1>
 
-      {/* Who We Serve */}
-      <div className="mt-12 max-w-4xl mx-auto">
-        <h3 className="text-2xl font-semibold mb-4">Who We Serve</h3>
-        <ul className="list-disc list-inside text-gray-700 space-y-2">
-          {audience.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
-        <p className="mt-4">
-          Wherever you are in your sourcing journey, <strong>AM Traders</strong>{" "}
-          is here to make it simple, secure, and successful.
-        </p>
-      </div>
-    </section>
-    <Footer/>
+            <p className="text-lg">
+              At <strong>AM Traders</strong>, we are more than just sourcing
+              experts—we are solution providers. With years of industry insight
+              and a robust international network, we help businesses around the
+              world source quality products with confidence and ease.
+            </p>
+          </div>
+          <hr className="mt-6  text-gray-300"/>
+
+          <div className="grid p-4 mt-6 mx-auto grid-cols-1 md:grid-cols-2 gap-6">
+            <WhoWeServe />
+            <WhatWeStandFor />
+          </div>
+
+          <p className="mt-4 text-center">
+            Wherever you are in your sourcing journey,{" "}
+            <strong>AM Traders</strong> is here to make it simple, secure, and
+            successful.
+          </p>
+          {/* Mission and Vision */}
+          {/* <div className="mt-12 max-w-4xl mx-auto space-y-6">
+          <div>
+            <h3 className="text-2xl font-semibold">Our Mission</h3>
+            <p className="text-gray-700 mt-2">
+              To empower businesses worldwide by providing seamless access to
+              reliable products, transparent sourcing processes, and end-to-end
+              trade support—ensuring growth, efficiency, and peace of mind.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold">Our Vision</h3>
+            <p className="text-gray-700 mt-2">
+              To be a globally recognized sourcing partner that transforms how
+              businesses manage procurement—by making international trade
+              smarter, safer, and more accessible.
+            </p>
+          </div>
+        </div> */}
+        </div>
+      </section>
+      <Footer />
     </>
   );
 };
