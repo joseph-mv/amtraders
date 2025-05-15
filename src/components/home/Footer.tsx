@@ -1,14 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-  faLinkedinIn,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Whatsapp from "../common/Whatspp";
 import { chinaLocation } from "@/constant";
+import SocialMediaLinks from "../common/SocialMediaLinks";
 
 export default function Footer() {
   return (
@@ -160,39 +154,7 @@ export default function Footer() {
           <h3 className="text-xl font-semibold mb-4 text-center text-white">
             Follow Us
           </h3>
-          <div className="flex items-center justify-center gap-4">
-            <a
-              href="#"
-              className="p-2 bg-gray-700 rounded-full hover:bg-white hover:text-gray-900 transition"
-            >
-              <FontAwesomeIcon icon={faFacebookF} size="lg" />
-            </a>
-            <a
-              href="https://www.instagram.com/gz_am_ltd?igsh=MTNqazB0bjA5dHNoNQ=="
-              className="p-2 bg-gray-700 rounded-full hover:bg-white hover:text-gray-900 transition"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="lg" />
-            </a>
-            <a
-              href="#"
-              className="p-2 bg-gray-700 rounded-full hover:bg-white hover:text-gray-900 transition"
-            >
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
-            </a>
-            <a
-              href="#"
-              className="p-2 bg-gray-700 rounded-full hover:bg-white hover:text-gray-900 transition"
-            >
-              <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-            </a>
-            <a
-              href="https://wa.me/8613249728354"
-              target="_blank"
-              className="p-2 bg-gray-700 rounded-full hover:bg-white hover:text-gray-900 transition"
-            >
-              <FontAwesomeIcon icon={faWhatsapp} size="lg" />
-            </a>
-          </div>
+          <SocialMediaLinks/>
         </div>
       </div>
 

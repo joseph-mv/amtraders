@@ -1,12 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-  faLinkedinIn,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
 import Whatsapp from "../common/Whatspp";
+import SocialMediaLinks from "../common/SocialMediaLinks";
 
 // Navigation and contact data
 const navigationLinks = [
@@ -34,28 +27,6 @@ const contactInfo = [
   },
 ];
 
-const socialLinks = [
-  {
-    icon: faFacebookF,
-    href: "#",
-  },
-  {
-    icon: faInstagram,
-    href: "https://www.instagram.com/gz_am_ltd?igsh=MTNqazB0bjA5dHNoNQ==",
-  },
-  {
-    icon: faTwitter,
-    href: "#",
-  },
-  {
-    icon: faLinkedinIn,
-    href: "#",
-  },
-  {
-    icon: faWhatsapp,
-    href: "https://wa.me/8613249728354",
-  },
-];
 
 export default function Footer() {
   return (
@@ -94,22 +65,7 @@ export default function Footer() {
         </div>
 
         {/* Social Media Section */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4 text-white">Follow Us</h3>
-          <div className="flex justify-center md:justify-start gap-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-700 rounded-full hover:bg-white hover:text-gray-900 transition"
-              >
-                <FontAwesomeIcon icon={social.icon} size="lg" />
-              </a>
-            ))}
-          </div>
-        </div>
+        <SocialMediaLinks/>
       </div>
 
       {/* Bottom Copyright */}
