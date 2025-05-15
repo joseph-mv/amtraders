@@ -52,8 +52,7 @@ const Hero = () => {
         {/* Services Button */}
         <div className="flex gap-1">
           <Link
-            href="/"
-            target="_blank"
+            href="#services"
             className=" bg-primary font-semibold text-nowrap w-max  text-black gap-3 p-4   rounded-md bg-white  transform hover:bg-card-bg 
             hover:-translate-y-0.5 hover:text-white flex items-center sm:ml-[calc(2*30%)] ml-[20%] animate-right2left transition duration-700"
           >
@@ -61,8 +60,8 @@ const Hero = () => {
             Our Services
           </Link>
           <Link
-            href="/"
-            target="_blank"
+            href="#contact-us"
+            
             className=" bg-primary font-semibold text-nowrap w-max  text-black gap-3 p-4   rounded-md  bg-white  hover:bg-card-bg hover:text-white hover:-translate-y-0.5 flex items-center  animate-right2left transition duration-700 "
           >
             Get Quote

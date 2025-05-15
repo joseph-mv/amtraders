@@ -19,7 +19,7 @@ const Contact = () => {
 const {formAction}= useForm()
 
   return (
-    <section className="relative bg-white  py-20 px-4 md:px-10">
+    <section id="contact-us" className="relative bg-white  py-20 px-4 md:px-10">
       <div className="  h-full w-full">
         <Image
           fill

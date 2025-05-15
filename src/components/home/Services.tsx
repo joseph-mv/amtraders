@@ -40,7 +40,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-gray-50 py-16">
+    <section id="services" className="bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-text-secondary sm:text-4xl">
@@ -54,7 +54,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300"
+              className="bg-white rounded-lg group shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -63,6 +63,7 @@ export default function Services() {
                   fill
                   style={{ objectFit: "cover" }}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                 className="group-hover:scale-105 group-active:scale-105 transition duration-200"
                   priority={index === 0}
                 />
               </div>
