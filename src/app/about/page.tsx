@@ -1,5 +1,6 @@
 "use client";
 
+import BrandFamilySection from "@/components/about/BrandFamilySection";
 import WhatWeStandFor from "@/components/about/WhatWeStandFor";
 import WhoWeServe from "@/components/about/WhoWeServe";
 import Footer from "@/components/layout/Footer";
@@ -90,6 +91,7 @@ const AboutUs = () => {
           </div>
         </div> */}
         </div>
+      <BrandFamilySection/>
       </section>
       <Footer />
     </>

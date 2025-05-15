@@ -21,7 +21,7 @@ export default function About() {
                 Mission
               </p>
               <Image
-                className="max-h-36 mx-auto max-w-[232px] md:max-w-[266px] w-auto"
+                className="max-h-36 mx-auto w-auto"
                 src="/images/mission.webp"
                 alt=""
                 width={200}
