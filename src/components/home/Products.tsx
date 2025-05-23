@@ -101,7 +101,7 @@ const ProductCategories = () => {
   }, []);
   return (
     <section
-      className="relative bg-accent-blue w-full  md:px-12 py-16  text-text-secondary"
+      className="relative bg-accent-blue w-full text-j  md:px-12 py-16  text-text-secondary"
       ref={scrollContRef}
       onMouseEnter={handleMouseEnter}
     >
@@ -122,7 +122,7 @@ const ProductCategories = () => {
         <h2 className="text-3xl text-white  md:text-4xl font-bold mb-4">
           Our Product Categories
         </h2>
-        <p className="text-lg text-white">
+        <p className="text-lg text-justify text-white">
           At AM Traders, we source a wide range of high-quality products across
           diverse industries. Whether you are building a brand, expanding a
           store, or supplying bulk for projects, our product categories are
@@ -142,7 +142,7 @@ const ProductCategories = () => {
             <span className="text-3xl">{category.icon}</span>
             <div>
               <h3 className="text-xl font-semibold">{category.title}</h3>
-              <p className="text-gray-700 text-sm mt-1">
+              <p className="text-gray-700 text-justify text-sm mt-1">
                 {category.description}
               </p>
             </div>
@@ -151,11 +151,11 @@ const ProductCategories = () => {
       </div>
 
       {/* Custom Sourcing */}
-      <div className="relative mt-12 max-w-3xl mx-auto text-center">
+      <div className="relative  mt-12 max-w-3xl mx-auto text-center">
         <h3 className="text-2xl font-semibold mb-2 text-white">
           🚀 Custom Sourcing Available
         </h3>
-        <p className="text-gray-100 text-md">
+        <p className="text-gray-100 m-4 text-md text-justify">
           Looking for something specific? Our team can source any product
           category not listed above. Share your requirements—we’ll find the
           right supplier and manage the rest.

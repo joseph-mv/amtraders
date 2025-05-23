@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
   faCircleExclamation,
-  faBriefcase,
+  // faBriefcase,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,11 +23,11 @@ const navLinks = [
     icon: faCircleExclamation,
     label: "About Us",
   },
-  {
-    href: "/services",
-    icon: faBriefcase,
-    label: "Services",
-  },
+  // {
+  //   href: "/services",
+  //   icon: faBriefcase,
+  //   label: "Services",
+  // },
   {
     href: "/contact",
     icon: faEnvelope,
@@ -38,7 +38,7 @@ const navLinks = [
 const Header = () => {
   // State to track whether the hamburger menu is open or closed
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
+  const [scrolled, setScrolled] = useState<boolean>(false);
   // Toggle function for the menu
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -53,20 +53,41 @@ const Header = () => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className=" bg-black  fixed top-0 w-full z-10">
       <div className="mx-auto max-w-6xl  flex p-1  justify-between items-center">
         {/* Logo Section */}
         <div className="rounded-full ml-5 flex items-center gap-2">
           <Image
-            className="rounded-xl"
-            style={{ width: "50px", height: "auto" }}
+            className={`rounded-xl w-[50px] transition duration-700 ${
+              scrolled ? "md:w-[50px] " : "md:w-[100px]"
+            }`}
+            style={{ height: "auto" }}
             src="/logo.png"
             alt="logo"
             width={100}
             height={100}
           />
-          {/* <span className="text-text-primary text-2xl">AM Traders</span> */}
+
+          <span className="text-white font-arial-black text-2xl">
+            AM Traders
+          </span>
         </div>
 
         {/* Navigation and Hamburger Menu */}
