@@ -13,10 +13,8 @@ const inquiryOptions = [
   "Other",
 ];
 
-
-
 const Contact = () => {
-const {formAction}= useForm()
+  const { formAction } = useForm();
 
   return (
     <section id="contact-us" className="relative bg-white  py-20 px-4 md:px-10">
@@ -32,7 +30,7 @@ const {formAction}= useForm()
       <div className="max-w-6xl  mx-auto grid grid-cols-1 rounded-3xl p-2 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="space-y-6 text-center ">
-          <h2 className="text-4xl md:text-3xl font-extrabold text-gray-900 leading-tight font-lucida">
+          <h2 className="text-4xl md:text-3xl  font-extrabold text-gray-900 leading-tight font-lucida">
             Let’s Build Something Global, Together
           </h2>
           <p className="text-lg text-gray-600 text-justify">
@@ -128,12 +126,10 @@ const {formAction}= useForm()
 
           <button
             type="submit"
-            // disabled={!isFormValid()}
-            className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-200 disabled:opacity-55"
+            className="w-full bg-blue-600  text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-200 cursor-pointer"
           >
             <FontAwesomeIcon icon={faPaperPlane} /> Send Message
           </button>
-         
         </form>
       </div>
     </section>

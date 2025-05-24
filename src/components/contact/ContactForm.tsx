@@ -1,8 +1,10 @@
 "use client";
 import { useForm } from "@/hooks/useForm";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ContactForm = () => {
-const {formAction}= useForm()
+  const { formAction } = useForm();
   return (
     <form action={formAction} className="space-y-3">
       <div>
@@ -86,10 +88,9 @@ const {formAction}= useForm()
       </div>
       <button
         type="submit"
-        className="w-full mt-3 p-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition disabled:opacity-55"
-        //   disabled={!isFormValid()}
+        className="w-full bg-blue-600  text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition duration-200 cursor-pointer"
       >
-        Send Message
+        <FontAwesomeIcon icon={faPaperPlane} /> Send Message
       </button>
     </form>
   );

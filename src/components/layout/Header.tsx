@@ -85,7 +85,7 @@ const Header = () => {
             height={100}
           />
 
-          <span className="text-white font-arial-black text-2xl">
+          <span className="text-white font-arial-black text-2x ">
             AM Traders
           </span>
         </div>
@@ -93,7 +93,7 @@ const Header = () => {
         {/* Navigation and Hamburger Menu */}
         <div className="flex items-center gap-3">
           {/* Hamburger Menu Button (Visible on mobile) */}
-          <button className="order-1 md:hidden relative z-20 w-[30px] h-[20px]">
+          <button className="order-1  md:hidden relative z-20 w-[30px] h-[20px]">
             <label
               className="flex  label flex-col gap-1  w-[30px]  h-[20px] "
               htmlFor="burger"

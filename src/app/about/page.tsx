@@ -9,10 +9,10 @@ import Image from "next/image";
 const AboutUs = () => {
   return (
     <>
-      <section className="w-full mt-9 px-4 md:px-12 py-10 bg-gray-50 text-gray-800">
-        <div className=" max-w-7xl mx-auto p-6 sm:p-8  mb-12">
+      <section className="min-h-screen font-trebuchet mt-12">
+        <div className=" max-w-6xl mx-auto p-6 sm:p-8  mb-12 mt-8 font-trebuchet">
 
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-6 text-gray-800">
+          <h1 className="text-3xl md:mt-10 sm:text-4xl font-extrabold text-center mb-6 text-gray-800">
             About Us
           </h1>
           {/* Intro */}
