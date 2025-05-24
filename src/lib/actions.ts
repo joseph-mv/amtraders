@@ -11,7 +11,7 @@ export async function handleContactForm(prevState:{ success: boolean, error: nul
 
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      service: "yahoo",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
