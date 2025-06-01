@@ -1,13 +1,9 @@
 import Whatsapp from "../common/Whatspp";
 import SocialMediaLinks from "../common/SocialMediaLinks";
+import NavigationLinks from "../common/NavigationLinks";
 
 // Navigation and contact data
-const navigationLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact Us", href: "#contact" },
-  { label: "Careers", href: "#careers" },
-];
+
 
 const contactInfo = [
   {
@@ -35,15 +31,7 @@ export default function Footer() {
         {/* Navigation Section */}
         <div>
           <h3 className="text-xl font-semibold mb-4 text-white">Navigation</h3>
-          <ul className="space-y-3 text-sm">
-            {navigationLinks.map((link) => (
-              <li key={link.label}>
-                <a href={link.href} className="hover:text-white transition">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <NavigationLinks/>
         </div>
 
         {/* Contact Section */}

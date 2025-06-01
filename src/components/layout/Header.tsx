@@ -10,16 +10,17 @@ import {
   // faBriefcase,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import { ROUTES } from "@/route";
 
 // Navigation links configuration
 const navLinks = [
   {
-    href: "/",
+    href: ROUTES.HOME,
     icon: faHome,
     label: "Home",
   },
   {
-    href: "/about",
+    href: ROUTES.ABOUT,
     icon: faCircleExclamation,
     label: "About Us",
   },
@@ -29,7 +30,7 @@ const navLinks = [
   //   label: "Services",
   // },
   {
-    href: "/contact",
+    href: ROUTES.CONTACT,
     icon: faEnvelope,
     label: "Contact",
   },
@@ -75,7 +76,7 @@ const Header = () => {
         {/* Logo Section */}
         <div className="rounded-full ml-5 flex items-center gap-2">
           <Image
-            className={`rounded-xl w-[50px] transition duration-700 ${
+            className={`rounded-xl w-[50px] transition-all duration-700 ease-in-out ${
               scrolled ? "md:w-[50px] " : "md:w-[100px]"
             }`}
             style={{ height: "auto" }}

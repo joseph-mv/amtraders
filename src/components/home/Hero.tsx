@@ -10,7 +10,6 @@ const Hero = () => {
         src="/images/heroBg.jpg"
         alt=""
         priority
-        // unoptimized
         className="fill-accent-blue  w-full h-[90vh] object-cover object-top"
       ></Image>
 

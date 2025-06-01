@@ -3,6 +3,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Whatsapp from "../common/Whatspp";
 import { chinaLocation } from "@/constant";
 import SocialMediaLinks from "../common/SocialMediaLinks";
+import NavigationLinks from "../common/NavigationLinks";
 
 export default function Footer() {
   return (
@@ -17,7 +18,7 @@ export default function Footer() {
           <div className="outline p-2 rounded-2xl min-w-[80%] max-w-[80%]">
             <p className="font-semibold underline pb-2">
               Hong Kong Office{" "}
-              <a
+              {/* <a
                 href="https://www.google.com/maps/place/YOUR_LOCATION_LINK"
                 target="_blank"
               >
@@ -25,7 +26,7 @@ export default function Footer() {
                   className="ml-2 hover:scale-110"
                   icon={faArrowUpRightFromSquare}
                 />
-              </a>
+              </a> */}
             </p>
             <p>AM IMPORT AND EXPORT TRADE CO., LIMITED</p>
             <address>
@@ -95,28 +96,7 @@ export default function Footer() {
         {/* Navigation Links */}
         <div className=" mt-5">
           <h3 className="text-xl font-semibold mb-4 text-white">Navigation</h3>
-          <ul className="space-y-3 text-sm">
-            <li>
-              <a href="#about" className="hover:text-white transition">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="hover:text-white transition">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-white transition">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a href="#careers" className="hover:text-white transition">
-                Careers
-              </a>
-            </li>
-          </ul>
+         <NavigationLinks/>
         </div>
 
         {/* Need Help Section */}
