@@ -11,7 +11,6 @@ const AboutUs = () => {
     <>
       <section className="min-h-screen font-trebuchet mt-12">
         <div className=" max-w-6xl mx-auto p-6 sm:p-8  mb-12 mt-8 font-trebuchet">
-
           <h1 className="text-3xl md:mt-10 sm:text-4xl font-extrabold text-center mb-6 text-gray-800">
             About Us
           </h1>
@@ -46,7 +45,7 @@ const AboutUs = () => {
               />
             </div>
           </div>
-    <hr className="mt-6  text-gray-300"/>
+          <hr className="mt-6  text-gray-300" />
           <div className="max-w-5xl mx-auto text-center mt-6 ">
             <h1 className="text-2xl sm:text-3xl  font-extrabold text-center mb-6 text-gray-800">
               Your Global Trade Partner for Smart, Secure, and Scalable Sourcing
@@ -59,7 +58,7 @@ const AboutUs = () => {
               world source quality products with confidence and ease.
             </p>
           </div>
-          <hr className="mt-6  text-gray-300"/>
+          <hr className="mt-6  text-gray-300" />
 
           <div className="grid p-4 mt-6 mx-auto grid-cols-1 md:grid-cols-2 gap-6">
             <WhoWeServe />
@@ -90,8 +89,8 @@ const AboutUs = () => {
             </p>
           </div>
         </div> */}
+          <BrandFamilySection />
         </div>
-      <BrandFamilySection/>
       </section>
       <Footer />
     </>
