@@ -1,9 +1,10 @@
+import { LINKS } from "@/constant";
 import { JSX } from "react";
 
 const WhatsappButton = (): JSX.Element => {
   return (
     <a
-      href="https://wa.me/8613249728354"
+      href={LINKS.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-[50%] left-5 z-50 flex items-center gap-2 bg-green-500 text-white px-2 py-1 rounded-full shadow-lg hover:bg-green-600 transition-colors"

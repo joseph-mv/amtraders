@@ -1,38 +1,39 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookF,
+  // faFacebookF,
   faInstagram,
-  faTwitter,
+  // faTwitter,
   faLinkedinIn,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import { LINKS } from "@/constant";
 
 
 
 const socialLinks = [
+  // {
+  //   href: "#",
+  //   icon: faFacebookF,
+  //   label: "Facebook",
+  // },
   {
-    href: "#",
-    icon: faFacebookF,
-    label: "Facebook",
-  },
-  {
-    href: "https://www.instagram.com/gz_am_ltd?igsh=MTNqazB0bjA5dHNoNQ==",
+    href: LINKS.instagram,
     icon: faInstagram,
     label: "Instagram",
   },
+  // {
+  //   href: "#",
+  //   icon: faTwitter,
+  //   label: "Twitter",
+  // },
   {
-    href: "#",
-    icon: faTwitter,
-    label: "Twitter",
-  },
-  {
-    href: "#",
+    href: LINKS.linkidn,
     icon: faLinkedinIn,
     label: "LinkedIn",
   },
   {
-    href: "https://wa.me/8613249728354",
+    href: LINKS.whatsapp,
     icon: faWhatsapp,
     label: "WhatsApp",
   },
