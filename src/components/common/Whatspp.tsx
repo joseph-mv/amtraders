@@ -1,4 +1,4 @@
-import { LINKS } from "@/constant";
+import { LINKS, whatspp } from "@/constant";
 import { JSX } from "react";
 
 interface WhatsappProps {
@@ -13,7 +13,7 @@ const Whatsapp = ({ children }: WhatsappProps) => {
       rel="noopener noreferrer" 
       className="hover:font-bold"
     >
-      +86 13249728354
+      {whatspp}
       {children}
     </a>
   );

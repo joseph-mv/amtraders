@@ -110,7 +110,7 @@ const ProductCategories = () => {
       <div className="">
         <Image
           fill
-          src="/images/products.jpg"
+          src="/images/products.webp"
           alt=""
           priority
           // unoptimized

@@ -1,4 +1,3 @@
-// In your page or component file
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -34,7 +33,7 @@ export default function BrandFamilySection() {
               </p>
             </div>
             <Image
-              src="/images/about/juice-spot.png" // Replace with actual path or URL
+              src="/images/about/juice-spot.png" 
               alt="Hot-in-Spicy Logo"
               width={640}
               height={640}
@@ -58,7 +57,7 @@ export default function BrandFamilySection() {
               </p>
             </div>
             <Image
-              src="/images/about/hot-n-spicy.png" // Replace with actual path or URL
+              src="/images/about/hot-n-spicy.png" 
               alt="Hot-in-Spicy Logo"
               width={640}
               height={640}

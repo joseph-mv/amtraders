@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="fixed top-10 -z-10 w-[100vw] h-[90vh] overflow-hidden bg-blend-overlay antialiased flex flex-col justify-center pl-[calc(2*10%)] pr-[10%]">
       <Image
         fill
-        src="/images/heroBg.jpg"
+        src="/images/heroBg.webp"
         alt=""
         priority
         className="fill-accent-blue  w-full h-[90vh] object-cover object-top"
@@ -31,16 +31,6 @@ const Hero = () => {
           </span>
         </h1>
 
-        {/* plane */}
-        {/* <Image
-          className="absolute top-0 z-10 delay-200  animate-zigzag-fly"
-          width={100}
-          height={20}
-          src="/images/plane.png"
-          alt=""
-          unoptimized
-        /> */}
-
         {/* Subheading */}
         <h3 className="text-lg md:text-xl font-bold text-white    font-trebuchet p-2 mb-6  text-justify">
           Your trusted partner in international trade. We connect businesses
@@ -55,7 +45,6 @@ const Hero = () => {
             className=" bg-primary font-semibold text-nowrap w-max  text-black gap-3 p-4   rounded-md bg-white  transform hover:bg-card-bg 
             hover:-translate-y-0.5 hover:text-white flex items-center sm:ml-[calc(2*30%)] ml-[20%] animate-right2left transition duration-700"
           >
-            {/* <FontAwesomeIcon icon={faUsers} className="animate-zoom-in-out" /> */}
             Our Services
           </Link>
           <Link

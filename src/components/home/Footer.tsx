@@ -131,7 +131,7 @@ export default function Footer() {
 
         {/* Social Media Section */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-center text-white">
+          <h3 className="text-xl md:mt-4 font-semibold mb-2 text-center text-white">
             Follow Us
           </h3>
           <SocialMediaLinks/>

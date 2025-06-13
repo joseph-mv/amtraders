@@ -75,7 +75,7 @@ function WhyChoose() {
     onMouseEnter={handleMouseEnter}>
       {/* Bg image */}
       <Image
-        src="/images/why-choose.jpg"
+        src="/images/why-choose.webp"
         fill
         alt=""
         className="w-full object-[10%] sm:object-left object-cover h-[400px]"
