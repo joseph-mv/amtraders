@@ -37,7 +37,7 @@ const AboutUs = () => {
             {/* Image */}
             <div className="w-full lg:w-[45%]">
               <Image
-                src="/images/about/about1.jpg" // Replace with your image path
+                src="/images/about/about1.webp" // Replace with your image path
                 alt="Global export and import"
                 width={600}
                 height={400}
